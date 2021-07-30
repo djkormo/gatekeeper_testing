@@ -22,6 +22,6 @@ You can see that [the tests fail if any of the objects doesn't follow the cluste
 
 ![Screenshot of tests failing](https://github.com/arapulido/gatekeeper_testing/blob/main/img/test-fail.png)
 
-And they pass once the objects follow the cluster policy:
+And [they pass once the objects follow the cluster policy](https://github.com/arapulido/gatekeeper_testing/runs/3202940754?check_suite_focus=true#step:11:1):
 
 ![Screenshot of tests failing](https://github.com/arapulido/gatekeeper_testing/blob/main/img/test-pass.png)
