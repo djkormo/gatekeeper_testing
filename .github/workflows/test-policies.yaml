@@ -38,9 +38,3 @@ jobs:
 
       - name: Try to apply all of our Kubernetes configuration
         run: kubectl apply --recursive -f kubernetes-config
-
-      - name: "Debug"
-        run: kubectl describe k8srequiredlabels all-pods-must-have-owner 
-
-      - name: "Debug2"
-        run: kubectl logs deploy/gatekeeper-controller-manager -n gatekeeper-system
