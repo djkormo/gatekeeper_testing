@@ -4,6 +4,7 @@ metadata:
   creationTimestamp: null
   labels:
     run: nginx
+    owner: ara.example.org
   name: nginx
 spec:
   containers:
