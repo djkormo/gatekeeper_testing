@@ -29,3 +29,6 @@ jobs:
 
       - name: Apply all Constraints 
         run: kubectl apply --recursive -f policies/constraints/
+
+      - name: Try to apply all of our Kubernetes configuration
+        run: kubectl apply --recursive -f kubernetes-config
