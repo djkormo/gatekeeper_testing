@@ -37,4 +37,4 @@ jobs:
         run: sleep 2
 
       - name: Try to apply all of our Kubernetes configuration
-        run: kubectl apply --recursive -f kubernetes-config
+        run: kubectl apply --recursive -f kubernetes-config --dry-run=server
