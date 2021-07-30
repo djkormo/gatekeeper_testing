@@ -25,7 +25,7 @@ jobs:
         run: kubectl -n gatekeeper-system wait --for=condition=Ready --timeout=60s pod -l control-plane=controller-manager
 
       - name: Apply all ConstraintsTemplates 
-        run: kubectl apply --recursive -f constrainttemplates/
+        run: kubectl apply --recursive -f policies/constrainttemplates/
 
       - name: Apply all Constraints 
-        run: kubectl apply --recursive -f constraints/
+        run: kubectl apply --recursive -f policies/constraints/
