@@ -1,0 +1,22 @@
+name: Test Kubernetes objects against Gatekeeper policies
+
+on: push 
+
+jobs:
+  test-policies:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      -  name: Install kubectl
+         uses: azure/setup-kubectl@v1
+         id: install
+
+      - name: Create kind cluster
+        uses: helm/kind-action@v1.2.0
+
+      - name: First test
+        run: kubectl get pods -n kube-system
