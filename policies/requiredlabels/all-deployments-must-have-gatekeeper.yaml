@@ -1,0 +1,13 @@
+apiVersion: constraints.gatekeeper.sh/v1beta1
+kind: K8sRequiredLabels
+metadata:
+  name: all-deployments-must-have-gatekeeper
+spec:
+  match:
+    kinds:
+      - apiGroups: [""]
+        kinds: ["Deployment"]
+  parameters:
+    message: "All deployments must have an `gatekeeper` label"
+    labels:
+      - key: gatekeeper

@@ -24,5 +24,5 @@ jobs:
       - name: Wait for Gatekeeper controller
         run: kubectl -n gatekeeper-system wait --for=condition=Ready --timeout=60s pod -l control-plane=controller-manager
 
-      - name: Get Gatekeeper pods
-        run: kubectl get pods -n gatekeeper-system
+      - name: Apply all ConstraintsTemplates and Constraints to the cluster
+        run: kubectl apply --recursive -f policies/
