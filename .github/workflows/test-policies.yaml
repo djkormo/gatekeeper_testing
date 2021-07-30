@@ -18,5 +18,11 @@ jobs:
       - name: Create kind cluster
         uses: helm/kind-action@v1.2.0
 
-      - name: First test
-        run: kubectl get pods -n kube-system
+      - name: Deploy Gatekeeper 3.5
+        run: kubectl apply -f https://raw.githubusercontent.com/open-policy-agent/gatekeeper/release-3.5/deploy/gatekeeper.yaml
+
+      - name: Wait for Gatekeeper controller
+        run: kubectl -n gatekeeper-system wait --for=condition=Ready --timeout=60s pod -l control-plane=controller-manager
+
+      - name: Get Gatekeeper pods
+        run: kubectl get pods -n gatekeeper-system
