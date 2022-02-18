@@ -17,7 +17,12 @@ jobs:
 
       - name: Create kind cluster
         uses: helm/kind-action@v1.2.0
-
+        
+        
+      - name: Check cluster-info
+        run: kubectl cluster-info
+        
+     
       - name: Deploy Gatekeeper 3.7
         run: kubectl apply -f https://raw.githubusercontent.com/open-policy-agent/gatekeeper/release-3.7/deploy/gatekeeper.yaml
 
