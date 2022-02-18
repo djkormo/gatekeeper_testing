@@ -21,7 +21,9 @@ jobs:
         
       - name: Check cluster-info
         run: kubectl cluster-info
-        
+     
+      - name: Check cluster nodes
+        run: kubectl get nodes -o wide
      
       - name: Deploy Gatekeeper 3.7
         run: kubectl apply -f https://raw.githubusercontent.com/open-policy-agent/gatekeeper/release-3.7/deploy/gatekeeper.yaml
